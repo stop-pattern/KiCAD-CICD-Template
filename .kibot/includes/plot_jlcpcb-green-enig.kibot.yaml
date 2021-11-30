@@ -9,7 +9,7 @@ outputs:
       bottom: false
       # [string|list(string)=''] Name of the filter to mark components as not fitted.
       # A short-cut to use for simple cases where a variant is an overkill
-      dnf_filter: ''
+      # dnf_filter: ''
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
@@ -49,7 +49,7 @@ outputs:
       bottom: true
       # [string|list(string)=''] Name of the filter to mark components as not fitted.
       # A short-cut to use for simple cases where a variant is an overkill
-      dnf_filter: ''
+      # dnf_filter: ''
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
