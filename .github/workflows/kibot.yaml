@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-name: "KiBot"
+name: KiBot
 
 on:
   push:
@@ -15,9 +15,9 @@ on:
       - ".github/workflows/kibot.yml"
 
 env:
-  schema: "*.kicad_sch"
-  board: "*.kicad_pcb"
-  dir: out
+  schema: "pcb/*.kicad_sch"
+  board: "pcb/*.kicad_pcb"
+  dir: "out"
 
 jobs:
 # preflights
@@ -52,12 +52,12 @@ jobs:
           config: .kibot/documentation.kibot.yaml
           schema: ${{ env.schema }}
           board: ${{ env.board }}
-          dir: ${{ env.dir }}
+          dir: ${{ env.dir }}_docs
       - uses: actions/upload-artifact@v2
         if: ${{ success() }}
         with:
-          name: ${{ github.event.repository.name }}-docs-${{ GITHUB_REF_NAME }}
-          path: ${{ env.dir }}/**
+          name: ${{ github.event.repository.name }}_docs
+          path: ${{ env.dir }}_docs/**
 # fabrications
   gerbers:
     runs-on: ubuntu-latest
@@ -69,26 +69,26 @@ jobs:
           config: .kibot/fabrications.kibot.yaml
           schema: ${{ env.schema }}
           board: ${{ env.board }}
-          dir: ${{ env.dir }}
+          dir: ${{ env.dir }}_gerbers
       - uses: actions/upload-artifact@v2
         if: ${{ success() }}
         with:
-          name: ${{ github.event.repository.name }}-gerbers-${{ GITHUB_REF_NAME }}
-          path: ${{ env.dir }}/**
-# render
-  render:
+          name: ${{ github.event.repository.name }}_gerbers
+          path: ${{ env.dir }}_gerbers/gerbers/**
+# cad
+  cad:
     runs-on: ubuntu-latest
     needs: [DRC]
     steps:
       - uses: actions/checkout@v2
       - uses: INTI-CMNB/KiBot@master
         with:
-          config: .kibot/render.kibot.yaml
+          config: .kibot/cad.kibot.yaml
           schema: ${{ env.schema }}
           board: ${{ env.board }}
-          dir: ${{ env.dir }}
+          dir: ${{ env.dir }}_cad
       - uses: actions/upload-artifact@v2
         if: ${{ success() }}
         with:
-          name: ${{ github.event.repository.name }}-render-${{ GITHUB_REF_NAME }}
-          path: ${{ env.dir }}/**
+          name: ${{ github.event.repository.name }}_cad
+          path: ${{ env.dir }}_cad/**

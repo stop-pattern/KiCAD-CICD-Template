@@ -1,5 +1,5 @@
 outputs:
-  - name: 'default green svg top'
+  - name: 'default black svg top'
     comment: 'https://github.com/yaqwsx/PcbDraw'
     type: 'pcbdraw'
     dir: 'img/pcb'
@@ -39,7 +39,7 @@ outputs:
       # [string='visible'] [visible,all,none] using visible only the warnings about components in the visible side are generated
       warnings: 'none'
 
-  - name: 'default green svg top'
+  - name: 'default black svg bottom'
     comment: 'https://github.com/yaqwsx/PcbDraw'
     type: 'pcbdraw'
     dir: 'img/pcb'

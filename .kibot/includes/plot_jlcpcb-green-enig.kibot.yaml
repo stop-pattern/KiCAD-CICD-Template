@@ -1,9 +1,9 @@
 outputs:
   # For more information: https://github.com/INTI-CMNB/KiBoM
-  - name: 'https://github.com/yaqwsx/PcbDraw'
-    comment: 'default green svg top'
+  - name: 'enig green svg top'
+    comment: 'https://github.com/yaqwsx/PcbDraw'
     type: 'pcbdraw'
-    dir: 'img/pcb'
+    dir: 'img/pcb/jlcpcb/green_enig'
     options:
       # [boolean=false] render the bottom side of the board (default is top side)
       bottom: false
@@ -17,13 +17,13 @@ outputs:
       # [list(string)=[]] list of components to highlight
       highlight: []
       # [list(string)=[]] list of libraries
-      libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
+      libs: []
       # [boolean=false] mirror the board
       mirror: false
       # [boolean=false] do not make holes transparent
       no_drillholes: false
       # [string='%f-%i%v.%x'] name for the generated file. Affected by global options
-      output: '%f-%i_green_enig.%x'
+      output: '%f-%i.%x'
       # [boolean=false] show placeholder for missing components
       placeholder: false
       # [dict|None] replacements for PCB references using components (lib:component)
@@ -40,10 +40,10 @@ outputs:
       # [string='visible'] [visible,all,none] using visible only the warnings about components in the visible side are generated
       warnings: 'none'
 
-  - name: 'https://github.com/yaqwsx/PcbDraw'
-    comment: 'default green svg top'
+  - name: 'enig green svg top'
+    comment: 'https://github.com/yaqwsx/PcbDraw'
     type: 'pcbdraw'
-    dir: 'img/pcb'
+    dir: 'img/pcb/jlcpcb/green_enig'
     options:
       # [boolean=false] render the bottom side of the board (default is top side)
       bottom: true
@@ -57,13 +57,13 @@ outputs:
       # [list(string)=[]] list of components to highlight
       highlight: []
       # [list(string)=[]] list of libraries
-      libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
+      libs: []
       # [boolean=false] mirror the board
       mirror: true
       # [boolean=false] do not make holes transparent
       no_drillholes: false
       # [string='%f-%i%v.%x'] name for the generated file. Affected by global options
-      output: '%f-%i_green_enig.%x'
+      output: '%f-%i.%x'
       # [boolean=false] show placeholder for missing components
       placeholder: false
       # [dict|None] replacements for PCB references using components (lib:component)

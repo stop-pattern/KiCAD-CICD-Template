@@ -1,6 +1,6 @@
 outputs:
   - name: 'step'
-    comment: 'Renders - 3D model (STEP)''
+    comment: 'Renders - 3D model (STEP)'
     type: step
     dir: cad
     options:

@@ -20,7 +20,7 @@ Whenever a file matching `pcb/*.kicad_*` changes this workflow will trigger.
 The following documents are generated on every build:
 
 ```
-- cad/ (disabled)
+- cad/
    - dxf/
       - AutoCAD - DXF
    - boardview - BRD
@@ -32,10 +32,10 @@ The following documents are generated on every build:
       - KiCost - XLSX (disabled)
    - schematic - PDF
 - img/
-   - pcb/
+   - pcb/$fab/$style/
       - PCB front - SVG
       - PCB back - SVG
-   - render
+   - render/ (disabled)
       - PCB render - PNG
    - schematic - SVG
 - gerbers - ZIP
@@ -51,15 +51,17 @@ used to build your source.
 
 ### REUSE
 
-used to insure every every file got a propper license. 
+used to insure every file got a propper license. 
 
 ## getting started
 
-- [ ] hit the 'use this template button' and give your project a name
-- [ ] clone this new repository localy.
-- [ ] change the filenames in `pcb/` matching your repository name.
+- [ ] hit the "use this template" button and give your project a name
+- [ ] clone this new repository localy
+- [ ] change the filenames in `pcb/` matching your repository name
 - [ ] replace the README.md
-- [ ] make sure the licenses of `pcb/*` fit your needs.
-- [ ] make sure the licenses of `src/*`, `include/*`, `lib/*`, `test/*`  fit your needs.
+- [ ] make sure the licenses of `pcb/*` fit your needs
+- [ ] make sure the licenses of `src/*`, `include/*`, `lib/*`, `test/*` fit your needs
+- [ ] modify settings in `.github/workflows/oshwa.yaml` and set your secret
 - [ ] commit all those changes
-- [ ] have fun with your PCB!
+- [ ] create your PCB
+- [ ] commit and push your project

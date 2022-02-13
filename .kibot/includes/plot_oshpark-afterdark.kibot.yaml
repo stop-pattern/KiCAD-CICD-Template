@@ -2,15 +2,15 @@ outputs:
   - name: 'oshpark afterdark svg top'
     comment: 'https://oshpark.com/'
     type: 'pcbdraw'
-    dir: 'img/pcb'
+    dir: 'img/pcb/oshpark/afterdark'
     options:
       bottom: false
       dpi: 300
       format: 'svg'
-      libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
+      libs: []
       mirror: false
       no_drillholes: false
-      output: '%f-%i_afterdark.%x'
+      output: '%f-%i.%x'
       placeholder: false
       remap:
       show_components: none
@@ -21,15 +21,15 @@ outputs:
   - name: 'oshpark afterdark svg bottom'
     comment: 'https://oshpark.com/'
     type: 'pcbdraw'
-    dir: 'img/pcb'
+    dir: 'img/pcb/oshpark/afterdark'
     options:
       bottom: true
       dpi: 300
       format: 'svg'
-      libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
+      libs: []
       mirror: false
       no_drillholes: false
-      output: '%f-%i_afterdark.%x'
+      output: '%f-%i.%x'
       placeholder: false
       remap:
       show_components: none

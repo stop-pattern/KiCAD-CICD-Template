@@ -9,7 +9,7 @@ preflight:
   update_xml: true
 
   pcb_replace:
-    date_command: date -d @`git log -1 --format='%at' -- $KIBOT_PCB_NAME` +%Y-%m-%d_%H-%M
+    date_command: date -d @`git log -1 --format='%at' -- $KIBOT_PCB_NAME` +%Y-%m-%d_%H-%M-%S
     replace_tags:
       - tag: "date"
         command: git log -1 --format="%h" $KIBOT_PCB_NAME
@@ -25,9 +25,5 @@ filters:
         regex: "^(G|#|TP|F).*"
 
 import:
-#  - file: includes/plot_jlcpcb-green-enig.kibot.yaml
-#  - file: includes/plot_jlcpcb-green-hasl.kibot.yaml
-  - file: includes/plot_oshpark-afterdark.kibot.yaml
-#  - file: includes/plot_oshpark-purple.kibot.yaml
-  - file: includes/render.kibot.yaml
-#  - file: includes/cad.kibot.yaml
+  - file: includes/cad.kibot.yaml
+#  - file: includes/render.kibot.yaml

@@ -16,11 +16,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: PlatformIO Run
+      - uses: actions/checkout@v2
 # https://github.com/karniv00l/platformio-run-action
-        uses: karniv00l/platformio-run-action@0.1.0
+      - uses: karniv00l/platformio-run-action@0.1.0
 #        with:
 #          environments: ""
 #          targets: ""
