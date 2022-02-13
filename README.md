@@ -1,3 +1,4 @@
+[![kibot](actions/workflows/kibot.yaml/badge.svg)](actions/workflows/kibot.yaml)
 [![oshwa](actions/workflows/oshwa.yaml/badge.svg)](actions/workflows/oshwa.yaml)
 [![reuse](actions/workflows/reuse.yaml/badge.svg)](actions/workflows/reuse.yaml)
 

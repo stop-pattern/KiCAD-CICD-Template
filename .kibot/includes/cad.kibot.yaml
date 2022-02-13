@@ -1,6 +1,6 @@
 outputs:
-  - name: step
-    comment: "Renders - 3D model (STEP)"
+  - name: 'step'
+    comment: 'Renders - 3D model (STEP)''
     type: step
     dir: cad
     options:
@@ -8,8 +8,8 @@ outputs:
       download: true
       output: '%f.%x'
 
-  - name: "https://openboardview.org/"
-    comment: "Example of board view export"
+  - name: 'Example of board view export'
+    comment: 'https://openboardview.org/'
     type: boardview
     dir: cad
     options:
@@ -17,8 +17,8 @@ outputs:
 
   # DXF (Drawing Exchange Format):
   # This output is what you get from the File/Plot menu in pcbnew.
-  - name: 'https://en.wikipedia.org/wiki/AutoCAD_DXF'
-    comment: 'Exports the PCB to 2D mechanical EDA tools (like AutoCAD).'
+  - name: 'Exports the PCB to 2D mechanical EDA tools (like AutoCAD).'
+    comment: 'https://en.wikipedia.org/wiki/AutoCAD_DXF'
     type: dxf
     dir: 'cad/dxf'
     options:

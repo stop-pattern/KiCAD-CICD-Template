@@ -25,6 +25,9 @@ filters:
         regex: "^(G|#|TP|F).*"
 
 import:
-  - file: includes/gebers.kibot.yaml
-  - file: includes/drills.kibot.yaml
-  - file: includes/bom_octopart.kibot.yaml
+#  - file: includes/plot_jlcpcb-green-enig.kibot.yaml
+#  - file: includes/plot_jlcpcb-green-hasl.kibot.yaml
+  - file: includes/plot_oshpark-afterdark.kibot.yaml
+#  - file: includes/plot_oshpark-purple.kibot.yaml
+  - file: includes/render.kibot.yaml
+#  - file: includes/cad.kibot.yaml

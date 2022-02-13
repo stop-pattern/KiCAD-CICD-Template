@@ -1,0 +1,94 @@
+# SPDX-FileCopyrightText: 2022 nerdyscout <https://github.com/nerdyscout/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: "KiBot"
+
+on:
+  push:
+  pull_request:
+    paths:
+      - "pcb/*.kicad_sch"
+      - "pcb/*.kicad_pcb"
+      - "pcb/*.kicad_pro"
+      - ".kibot/*"
+      - ".github/workflows/kibot.yml"
+
+env:
+  schema: "*.kicad_sch"
+  board: "*.kicad_pcb"
+  dir: out
+
+jobs:
+# preflights
+  ERC:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: INTI-CMNB/KiBot@master
+        with:
+          config: .kibot/erc.kibot.yaml
+          schema: ${{ env.schema }}
+          board: ${{ env.board }}
+          dir: ${{ env.dir }}
+  DRC:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: INTI-CMNB/KiBot@master
+        with:
+          config: .kibot/drc.kibot.yaml
+          schema: ${{ env.schema }}
+          board: ${{ env.board }}
+          dir: ${{ env.dir }}
+# documentation
+  docs:
+    runs-on: ubuntu-latest
+    needs: [ERC]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: INTI-CMNB/KiBot@master
+        with:
+          config: .kibot/documentation.kibot.yaml
+          schema: ${{ env.schema }}
+          board: ${{ env.board }}
+          dir: ${{ env.dir }}
+      - uses: actions/upload-artifact@v2
+        if: ${{ success() }}
+        with:
+          name: ${{ github.event.repository.name }}-docs-${{ GITHUB_REF_NAME }}
+          path: ${{ env.dir }}/**
+# fabrications
+  gerbers:
+    runs-on: ubuntu-latest
+    needs: [DRC]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: INTI-CMNB/KiBot@master
+        with:
+          config: .kibot/fabrications.kibot.yaml
+          schema: ${{ env.schema }}
+          board: ${{ env.board }}
+          dir: ${{ env.dir }}
+      - uses: actions/upload-artifact@v2
+        if: ${{ success() }}
+        with:
+          name: ${{ github.event.repository.name }}-gerbers-${{ GITHUB_REF_NAME }}
+          path: ${{ env.dir }}/**
+# render
+  render:
+    runs-on: ubuntu-latest
+    needs: [DRC]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: INTI-CMNB/KiBot@master
+        with:
+          config: .kibot/render.kibot.yaml
+          schema: ${{ env.schema }}
+          board: ${{ env.board }}
+          dir: ${{ env.dir }}
+      - uses: actions/upload-artifact@v2
+        if: ${{ success() }}
+        with:
+          name: ${{ github.event.repository.name }}-render-${{ GITHUB_REF_NAME }}
+          path: ${{ env.dir }}/**

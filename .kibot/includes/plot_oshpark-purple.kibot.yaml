@@ -1,6 +1,6 @@
 outputs:
-  - name: 'https://oshpark.com/'
-    comment: 'oshpark afterdark svg top'
+  - name: 'oshpark afterdark svg top'
+    comment: 'https://oshpark.com/'
     type: 'pcbdraw'
     dir: 'img/pcb'
     options:
@@ -18,8 +18,8 @@ outputs:
       vcuts: true
       warnings: 'none'
 
-  - name: 'https://oshpark.com/'
-    comment: 'oshpark afterdark svg bottom'
+  - name: 'oshpark afterdark svg bottom'
+    comment: 'https://oshpark.com/'
     type: 'pcbdraw'
     dir: 'img/pcb'
     options:
