@@ -1,0 +1,75 @@
+# SPDX-FileCopyrightText: 2022 nerdyscout <https://github.com/nerdyscout/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: OSHWA
+# see https: //certificationapi.oshwa.org/documentation#tag/Project/paths/~1api~1projects/post
+
+on:
+  release:
+    types: [draft]
+
+env:
+# required
+  responsiblePartyType: "Individual" # [Individual, Company, Organization]
+  responsibleParty: "${{ GITHUB_REPOSITORY_OWNER }}"
+#  bindingParty: "" 
+  country: "Germany"
+  projectName: "${{ github.event.repository.name }}"
+  primaryType: "Electronics" 
+  hardwareLicense: "CERN" 
+  softwareLicense: "GPL" 
+  documentationLicense: "CC0-BY-SA" 
+  noCommercialRestriction: true 
+  explanationNcr: "" 
+  noDocumentationRestriction: false
+  explanationNdr: "" 
+  openHardwareComponents: "" 
+  explanationOhwc: "" 
+  creatorContribution: false
+  explanationCcr: "" 
+  noUseRestriction: false 
+  explanationNur: "" 
+  redistributedWork: false
+  explanationRwr: "" 
+  noSpecificProduct: "" 
+  explanationNsp: "" 
+  noComponentRestriction: false 
+  explanationNor: "" 
+  technologyNeutral: false 
+  explanationTn: ""
+  certificationMarkTerms: '{accurateContactInformation: {term:"I have provided OSHWA with accurate contact information, recognize that all official communications from OSHWA will be directed to that contact information, and will update that contact information as necessary.","agreement": true}}',
+  explanationCertificationTerms: "" 
+  relationship: "self" 
+  agreementTerms: true 
+  parentName: "${{ GITHUB_REPOSITORY_OWNER }}"
+# optional
+#  streetAddress1: "" 
+#  streetAddress2: "" 
+#  city: "" 
+#  state: "" 
+#  postalCode: "" 
+#  privateContact: "" 
+#  publicContact: "" 
+#  projectWebsite: "https://github.com/${{ GITHUB_REPOSITORY }" 
+#  projectVersion: "${{ GITHUB_REF }}"
+#  previousVersions: "" 
+#  projectDescription: "" 
+#  additionalType: "" 
+#  projectKeywords: "" 
+#  documentationUrl: "https://${{ GITHUB_REPOSITORY_OWNER }}.github.io/${{ GITHUB_REPOSITORY }/docs"
+#  availableFileFormat: false 
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: oshwa
+        uses: satak/webrequest-action@master
+        with:
+          url: "https://certificationapi.oshwa.org/api/projects/"
+          method: POST
+          headers: '{"Authorization": "Bearer ${{ secrets.OSHWA_KEY }}"}, {"Content-Type": "application/json"}'
+          payload: ${{ env }}
+      - run: echo ${{ steps.oshwa.outputs.output }}
+        if: always()
