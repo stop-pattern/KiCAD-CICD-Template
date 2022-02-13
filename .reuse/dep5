@@ -11,10 +11,10 @@ Files: pcb/docs/* README.md
 Copyright: 2022, nerdyscout <nerdyscout@posteo.de>
 License: CC-BY-SA-4.0
 
-Files: src/*
+Files: src/* lib/* include/* test/*
 Copyright: 2022, nerdyscout <nerdyscout@posteo.de>
 License: GPL-3.0-or-later
 
-Files: .gitignore .kibot/*
+Files: .gitignore .kibot/* platformio.ini
 Copyright: 2022, nerdyscout <nerdyscout@posteo.de>
 License: CC0-1.0

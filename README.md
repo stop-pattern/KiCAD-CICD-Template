@@ -1,4 +1,5 @@
 [![kibot](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/kibot.yaml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/kibot.yaml)
+[![platformio](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/platformio.yaml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/platformio.yaml)
 [![oshwa](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/oshwa.yaml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/oshwa.yaml)
 [![reuse](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/reuse.yaml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/reuse.yaml)
 
@@ -44,6 +45,10 @@ The following documents are generated on every build:
 
 On every release draft the PCB will be registered on [OSHWA](https://certification.oshwa.org/)
 
+### PlatformIO
+
+used to build your source.
+
 ### REUSE
 
 used to insure every every file got a propper license. 
@@ -54,6 +59,7 @@ used to insure every every file got a propper license.
 - [ ] clone this new repository localy.
 - [ ] change the filenames in `pcb/` matching your repository name.
 - [ ] replace the README.md
-- [ ] [ ] make sure the licenses of `pcb/*` fit your needs.
+- [ ] make sure the licenses of `pcb/*` fit your needs.
+- [ ] make sure the licenses of `src/*`, `include/*`, `lib/*`, `test/*`  fit your needs.
 - [ ] commit all those changes
 - [ ] have fun with your PCB!
