@@ -1,3 +1,7 @@
+[![reuse](actions/workflows/reuse.yaml/badge.svg)](actions/workflows/reuse.yaml)
+
+---
+
 # KiBot CI/CD template repository
 
 This repository provides a ready-to-go CI/CD workflow for KiCad with GitHub actions.
