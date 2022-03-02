@@ -23,7 +23,7 @@ on:
 env:
   schema: "pcb/*.kicad_sch"
   board: "pcb/*.kicad_pcb"
-  dir: "out"
+  dir: "pcb/"
 
 jobs:
 # checks
@@ -58,12 +58,12 @@ jobs:
           config: .kibot/docs.kibot.yaml
           schema: ${{ env.schema }}
           board: ${{ env.board }}
-          dir: ${{ env.dir }}_docs
+          dir: ${{ env.dir }}
       - uses: actions/upload-artifact@v2
         if: ${{ success() }}
         with:
           name: ${{ github.event.repository.name }}_docs
-          path: ${{ env.dir }}_docs/**
+          path: ${{ env.dir }}/docs/**
 # fabrications
   gerbers:
     runs-on: ubuntu-latest
@@ -75,12 +75,12 @@ jobs:
           config: .kibot/gerbers.kibot.yaml
           schema: ${{ env.schema }}
           board: ${{ env.board }}
-          dir: ${{ env.dir }}_gerbers
+          dir: ${{ env.dir }}
       - uses: actions/upload-artifact@v2
         if: ${{ success() }}
         with:
           name: ${{ github.event.repository.name }}_gerbers
-          path: ${{ env.dir }}_gerbers/gerbers/**
+          path: ${{ env.dir }}/gerbers/**
 # cad
   cad:
     runs-on: ubuntu-latest
@@ -92,12 +92,12 @@ jobs:
           config: .kibot/cad.kibot.yaml
           schema: ${{ env.schema }}
           board: ${{ env.board }}
-          dir: ${{ env.dir }}_cad
+          dir: ${{ env.dir }}
       - uses: actions/upload-artifact@v2
         if: ${{ success() }}
         with:
           name: ${{ github.event.repository.name }}_cad
-          path: ${{ env.dir }}_cad/**
+          path: ${{ env.dir }}/cad/**
 # render
   render:
     runs-on: ubuntu-latest
@@ -109,9 +109,9 @@ jobs:
           config: .kibot/render.kibot.yaml
           schema: ${{ env.schema }}
           board: ${{ env.board }}
-          dir: ${{ env.dir }}_img
+          dir: ${{ env.dir }}
       - uses: actions/upload-artifact@v2
         if: ${{ success() }}
         with:
           name: ${{ github.event.repository.name }}_img
-          path: ${{ env.dir }}_img/img/**
+          path: ${{ env.dir }}/img/**
