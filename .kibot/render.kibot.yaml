@@ -25,6 +25,5 @@ filters:
         regex: "^(G|#|TP|F).*"
 
 import:
-  - file: includes/gerbers.kibot.yaml
-  - file: includes/drills.kibot.yaml
-  - file: includes/bom_octopart.kibot.yaml
+#  - file: includes/render.kibot.yaml
+  - file: includes/plot.kibot.yaml

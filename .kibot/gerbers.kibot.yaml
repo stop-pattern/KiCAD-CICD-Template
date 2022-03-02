@@ -3,7 +3,7 @@ kibot:
 
 preflight:
   run_erc: false
-  run_drc: false
+  run_drc: true
   check_zone_fills: true
   ignore_unconnected: false
   update_xml: true
@@ -25,6 +25,6 @@ filters:
         regex: "^(G|#|TP|F).*"
 
 import:
-  - file: includes/boardview.kibot.yaml
-  - file: includes/step.kibot.yaml
-  - file: includes/dxf.kibot.yaml
+  - file: includes/gerbers.kibot.yaml
+  - file: includes/drills.kibot.yaml
+  - file: includes/bom_octopart.kibot.yaml
