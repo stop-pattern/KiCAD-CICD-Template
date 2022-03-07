@@ -1,0 +1,111 @@
+image: setsoft/kicad_auto:dev_k6
+
+default:
+  timeout: 5m
+  artifacts:
+    exclude:
+    - $OUTDIR/**/*.ogv
+
+variables:
+    SCHEMATIC: "pcb/*.kicad_sch"
+    BOARD: "pcb/*.kicad_pcb"
+    OUTDIR: "pcb"
+ 
+stages:
+  - check
+  - export
+  - publish
+ 
+
+# JOBS
+ 
+# runs design checks
+ERC:
+  stage: check
+  script:
+      - kibot -d $OUTDIR -e $SCHEMATIC -b $BOARD -c ".kibot/erc.kibot.yaml" -vv
+  artifacts:
+    when: always
+    name: "$CI_JOB_NAME $CI_COMMIT_TAG"
+    paths:
+     - $OUTDIR/*-erc.txt
+ 
+DRC:
+  stage: check
+  script:
+      - kibot -d $OUTDIR -e $SCHEMATIC -b $BOARD -c ".kibot/drc.kibot.yaml" -vv
+  allow_failure: true
+  artifacts:
+    when: always
+    name: "$CI_JOB_NAME $CI_COMMIT_TAG"
+    paths:
+      - $OUTDIR/*-drc.txt
+ 
+# generates documentation
+docs:
+  needs: [ERC]
+  stage: export
+  script:
+      - kibot -d $OUTDIR -e $SCHEMATIC -b $BOARD -c ".kibot/docs.kibot.yaml" -v
+  allow_failure: true
+  artifacts:
+    name: "$CI_JOB_NAME $CI_COMMIT_TAG"
+    paths:
+      - $OUTDIR/docs/*.pdf
+      - $OUTDIR/docs/bom/*.html
+      - $OUTDIR/img/*.svg
+ 
+# generates images of board
+cad:
+  needs: [DRC]
+  stage: export
+  script:
+      - kibot -d $OUTDIR -e $SCHEMATIC -b $BOARD -c ".kibot/cad.kibot.yaml" -v
+  allow_failure: true
+  artifacts:
+    name: "$CI_JOB_NAME $CI_COMMIT_TAG"
+    paths:
+      - $OUTDIR/img/**/*.svg
+
+render:
+  needs: [DRC]
+  stage: export
+  script:
+      - kibot -d $OUTDIR -e $SCHEMATIC -b $BOARD -c ".kibot/render.kibot.yaml" -v
+  allow_failure: true
+  artifacts:
+    name: "$CI_JOB_NAME $CI_COMMIT_TAG"
+    paths:
+      - $OUTDIR/img/**/*.png
+
+# generates fabrication files if commit tagged
+gerbers:
+  needs: [DRC]
+  stage: export
+  script:
+      - kibot -d $OUTDIR -e $SCHEMATIC -b $BOARD -c ".kibot/gerbers.kibot.yaml" -v
+  allow_failure: false
+  artifacts:
+    name: "$CI_PROJECT_NAME $CI_COMMIT_TAG"
+    paths:
+      - $OUTDIR/gerbers/*.gbr
+      - $OUTDIR/gerbers/*.drl
+      - $OUTDIR/gerbers/*.csv
+ 
+# upload assets
+pages:
+  needs: [gerbers, docs]
+  stage: publish
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - echo "creating release package"
+  artifacts:
+    name: "$CI_PROJECT_NAME $CI_COMMIT_TAG"
+    paths:
+      - $OUTDIR/docs/*
+      - $OUTDIR/gerbers/*
+      - $OUTDIR/*.pro
+      - $OUTDIR/*.kicad_sch
+      - $OUTDIR/*.kicad_pcb
+      - $OUTDIR/*.lib
