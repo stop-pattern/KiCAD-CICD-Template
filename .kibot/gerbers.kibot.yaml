@@ -28,3 +28,13 @@ import:
   - file: includes/gerbers.kibot.yaml
   - file: includes/drills.kibot.yaml
   - file: includes/bom_octopart.kibot.yaml
+
+outputs:
+  - name: 'gerbers'
+    dir: .
+    type: compress
+    options:
+      format: ZIP
+      files:
+        - dest: .
+          source: gerbers/*

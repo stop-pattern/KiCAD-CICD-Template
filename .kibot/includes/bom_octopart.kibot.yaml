@@ -1,5 +1,5 @@
 outputs:
-  - name: 'bom.csv - octopart'
+  - name: 'gerbers/bom.csv - octopart'
     comment: 'https://octopart.com/'
     type: 'kibom'
     dir: 'gerbers'

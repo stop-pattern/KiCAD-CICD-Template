@@ -68,7 +68,7 @@ outputs:
       # [string='%f-%i%v.%x'] output file name (%i='top_pos'|'bottom_pos'|'both_pos', %x='pos'|'csv'). Affected by global options
       output: '%f-%i.%x'
       # [boolean=true] generate two separated files, one for the top and another for the bottom
-      separate_files_for_front_and_back: false
+      separate_files_for_front_and_back: true
       # [string='millimeters'] [millimeters,inches] units used for the positions
       units: 'millimeters'
       # [string=''] Board variant to apply
