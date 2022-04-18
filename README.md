@@ -42,7 +42,7 @@ The following documents are generated on every build:
 
 ### PlatformIO
 
-used to build your source.
+used to build your source code.
 
 ### REUSE
 
