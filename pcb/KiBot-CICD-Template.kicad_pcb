@@ -7,8 +7,8 @@
   (paper "A4")
   (title_block
     (title "KiBot-CICD-Template")
-    (date "@date@")
-    (rev "@version@")
+    (date "${date}")
+    (rev "${version}")
     (company "nerdyscout")
     (comment 4 "CERN Open Hardware Licence v2.0")
   )
@@ -77,6 +77,8 @@
     )
   )
 
+  (property "Variable" "")
+
   (net 0 "")
 
   (gr_arc (start 137.794999 104.139999) (mid 137.609012 104.589012) (end 137.159999 104.774999) (layer "Edge.Cuts") (width 0.1) (tstamp 00000000-0000-0000-0000-00005e4043c3))
@@ -87,7 +89,7 @@
   (gr_arc (start 107.949999 104.774999) (mid 107.500986 104.589012) (end 107.314999 104.139999) (layer "Edge.Cuts") (width 0.1) (tstamp 00000000-0000-0000-0000-00005e4048f9))
   (gr_line (start 137.159999 104.774999) (end 107.949999 104.774999) (layer "Edge.Cuts") (width 0.1) (tstamp 00000000-0000-0000-0000-00005e750007))
   (gr_line (start 107.949999 86.994999) (end 137.159999 86.994999) (layer "Edge.Cuts") (width 0.1) (tstamp 00000000-0000-0000-0000-00005e750586))
-  (gr_text "@version@" (at 123.189999 92.328999) (layer "F.SilkS") (tstamp 00000000-0000-0000-0000-0000604c9ab3)
+  (gr_text "${version}" (at 123.189999 92.328999) (layer "F.SilkS") (tstamp 00000000-0000-0000-0000-0000604c9ab3)
     (effects (font (size 1 1) (thickness 0.25)))
   )
   (gr_text "KiBot-CICD-Template" (at 123.189999 90.550999) (layer "F.SilkS") (tstamp 00000000-0000-0000-0000-000061a68596)

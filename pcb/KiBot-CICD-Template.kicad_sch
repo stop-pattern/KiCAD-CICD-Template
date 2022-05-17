@@ -6,8 +6,8 @@
 
   (title_block
     (title "KiBot-CICD-Template")
-    (date "@date@")
-    (rev "@version@")
+    (date "${date}")
+    (rev "${version}")
     (company "nerdyscout")
     (comment 4 "CERN Open Hardware Licence v2.0")
   )
@@ -404,7 +404,7 @@
     (property "Reference" "R1" (id 0) (at 111.76 109.2199 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "" (id 1) (at 111.76 111.7599 0)
+    (property "Value" "R" (id 1) (at 111.76 111.7599 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (id 2) (at 107.442 110.49 90)
