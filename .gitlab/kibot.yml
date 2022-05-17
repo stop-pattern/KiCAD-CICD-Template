@@ -5,7 +5,7 @@ variables:
 
 default:
   timeout: 5m
-  image: setsoft/kicad_auto:dev_k6
+  image: setsoft/kicad_auto:ki6
   artifacts:
     exclude:
     - $OUTDIR/**/*.ogv
