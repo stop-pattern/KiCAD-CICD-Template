@@ -21,13 +21,13 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: KiBot
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: PlatformIO
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: PlatformIO
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release
         uses: softprops/action-gh-release@v1
