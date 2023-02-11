@@ -4,7 +4,7 @@
 
 # KiBot CI/CD template repository
 
-This repository provides different CI/CD workflows used for projects using [KiCAD](https://www.kicad.org/) and [PlatformIO](https://www.platformio.org).
+This repository provides different CI/CD workflows used for projects using [KiCAD](https://www.kicad.org/).
 
 ## workflows
 
