@@ -1,3 +1,7 @@
+[![kibot](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/kibot.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/kibot.yml)
+
+---
+
 # KiBot CI/CD template repository
 
 This repository provides different CI/CD workflows used for projects using [KiCAD](https://www.kicad.org/) and [PlatformIO](https://www.platformio.org).
@@ -32,11 +36,14 @@ The following documents are generated on every build:
       - PCB render - PNG
    - schematic - SVG
 - pcb/gerbers - ZIP
+- manufactures - ZIP
+   - Elecrow
+   - FusionPCB
+   - JLCPCB(include stencil)
+   - MacroFab XYRS(bom)
+   - P-Ban
+   - PCBWay
 ```
-
-### REUSE
-
-used to insure every file got a propper license. 
 
 ## getting started
 
@@ -46,7 +53,4 @@ used to insure every file got a propper license.
 - [ ] PCB
    - [ ] change the filenames in `pcb/*.kicad_*` matching your repository name
    - [ ] create your PCB
-- [ ] run `reuse --lint`
-   - [ ] make sure the licenses of `pcb/*` fits your needs
-   - [ ] make sure the licenses of `src/*`, `include/*`, `lib/*`, `test/*` fits your needs
 - [ ] commit and push all those changes regulary to your project
