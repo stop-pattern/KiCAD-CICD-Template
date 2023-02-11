@@ -147,4 +147,9 @@ jobs:
           name: ${{github.event.repository.name}}_manufactures
           if-no-files-found: error
           path: |
-            ${{env.dir}}/Manufacturers/**
+            ${{env.dir}}/Elecrow/
+            ${{env.dir}}/FusionPCB/
+            ${{env.dir}}/JLCPCB/
+            ${{env.dir}}/**_MacroFab.XYRS
+            ${{env.dir}}/P-Ban/
+            ${{env.dir}}/PCBWay/
