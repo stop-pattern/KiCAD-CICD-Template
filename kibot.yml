@@ -64,7 +64,7 @@ import:
 # manufacturers
   - file: Elecrow
   - file: FusionPCB
-  - file: JLCPCB
+#  - file: JLCPCB
   - file: JLCPCB_stencil
   - file: MacroFab_XYRS
   - file: P-Ban
