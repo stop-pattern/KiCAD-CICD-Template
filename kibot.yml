@@ -61,3 +61,11 @@ import:
   - file: .kibot/boardview.kibot.yml
   - file: .kibot/step.kibot.yml
   - file: .kibot/dxf.kibot.yml
+# manufacturers
+- file: Elecrow
+- file: FusionPCB
+- file: JLCPCB
+- file: JLCPCB_stencil
+- file: MacroFab_XYRS
+- file: P-Ban
+- file: PCBWay
