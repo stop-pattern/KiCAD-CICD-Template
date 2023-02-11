@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 [![kibot](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/kibot.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/kibot.yml)
 [![reuse](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/reuse.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/reuse.yml)
 
 ---
 
 # KiCAD-CICD-Template
+=======
+# KiBot CI/CD template repository
+>>>>>>> parent of 8da388a (add REUSE)
 
 This repository provides different CI/CD workflows used for projects using [KiCAD](https://www.kicad.org/) and [PlatformIO](https://www.platformio.org).
 
