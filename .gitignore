@@ -31,8 +31,12 @@ fp-info-cache
 *-erc.txt
 **/KiBotOutput
 
+<<<<<<< HEAD
 *.zip
 
 # vscode + platformio
 .pio
 .vscode/*
+=======
+*.zip
+>>>>>>> parent of d01797e (adding platformio)

@@ -1,5 +1,4 @@
 [![kibot](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/kibot.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/kibot.yml)
-[![platformio](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/platformio.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/platformio.yml)
 [![reuse](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/reuse.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/reuse.yml)
 
 ---
@@ -40,10 +39,6 @@ The following documents are generated on every build:
 - pcb/gerbers - ZIP
 ```
 
-### PlatformIO
-
-used to rebuild your source code whenever it changes.
-
 ### REUSE
 
 used to insure every file got a propper license. 
@@ -53,8 +48,6 @@ used to insure every file got a propper license.
 - [ ] hit the "use this template" button and give your project a name
 - [ ] clone this new repository localy
 - [ ] replace content of README.md
-- [ ] Code
-   - [ ] put your code in the `src/` folder using platformio
 - [ ] PCB
    - [ ] change the filenames in `pcb/*.kicad_*` matching your repository name
    - [ ] create your PCB

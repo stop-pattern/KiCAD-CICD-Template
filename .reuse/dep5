@@ -11,10 +11,14 @@ Files: pcb/docs/* README.md
 Copyright: 2022, nerdyscout <nerdyscout@posteo.de>
 License: CC-BY-SA-4.0
 
-Files: src/* lib/* include/* test/*
+Files: src/*
 Copyright: 2022, nerdyscout <nerdyscout@posteo.de>
 License: GPL-3.0-or-later
 
+<<<<<<< HEAD
 Files: .gitignore .kibot/* *.yml *.yaml *.ini
+=======
+Files: .gitignore .kibot/*
+>>>>>>> parent of d01797e (adding platformio)
 Copyright: 2022, nerdyscout <nerdyscout@posteo.de>
 License: CC0-1.0
