@@ -1,4 +1,4 @@
-[![kibot](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/kibot.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/kibot.yml)
+[![kibot](https://github.com/stop-pattern/KiCAD-CICD-Template/actions/workflows/kibot.yml/badge.svg)](https://github.com/stop-pattern/KiBot-CICD-Template/actions/workflows/kibot.yml)
 
 ---
 
