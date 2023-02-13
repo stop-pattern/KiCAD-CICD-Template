@@ -32,7 +32,3 @@ fp-info-cache
 **/KiBotOutput
 
 *.zip
-
-# vscode + platformio
-.pio
-.vscode/*

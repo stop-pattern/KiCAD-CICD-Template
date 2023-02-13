@@ -1,12 +1,10 @@
-[![kibot](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/kibot.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/kibot.yml)
-[![platformio](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/platformio.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/platformio.yml)
-[![reuse](https://github.com/nerdyscout/KiCAD-CICD-Template/actions/workflows/reuse.yml/badge.svg)](https://github.com/nerdyscout/KiBot-CICD-Template/actions/workflows/reuse.yml)
+[![kibot](https://github.com/stop-pattern/KiCAD-CICD-Template/actions/workflows/kibot.yml/badge.svg)](https://github.com/stop-pattern/KiBot-CICD-Template/actions/workflows/kibot.yml)
 
 ---
 
-# KiCAD-CICD-Template
+# KiBot CI/CD template repository
 
-This repository provides different CI/CD workflows used for projects using [KiCAD](https://www.kicad.org/) and [PlatformIO](https://www.platformio.org).
+This repository provides different CI/CD workflows used for projects using [KiCAD](https://www.kicad.org/).
 
 ## workflows
 
@@ -38,27 +36,21 @@ The following documents are generated on every build:
       - PCB render - PNG
    - schematic - SVG
 - pcb/gerbers - ZIP
+- manufactures - ZIP
+   - Elecrow
+   - FusionPCB
+   - JLCPCB(include stencil)
+   - MacroFab XYRS(bom)
+   - P-Ban
+   - PCBWay
 ```
-
-### PlatformIO
-
-used to rebuild your source code whenever it changes.
-
-### REUSE
-
-used to insure every file got a propper license. 
 
 ## getting started
 
 - [ ] hit the "use this template" button and give your project a name
 - [ ] clone this new repository localy
 - [ ] replace content of README.md
-- [ ] Code
-   - [ ] put your code in the `src/` folder using platformio
 - [ ] PCB
    - [ ] change the filenames in `pcb/*.kicad_*` matching your repository name
    - [ ] create your PCB
-- [ ] run `reuse --lint`
-   - [ ] make sure the licenses of `pcb/*` fits your needs
-   - [ ] make sure the licenses of `src/*`, `include/*`, `lib/*`, `test/*` fits your needs
 - [ ] commit and push all those changes regulary to your project
