@@ -12,7 +12,7 @@ This repository provides different CI/CD workflows used for projects using [KiCA
 
 [KiBot](https://github.com/INTI-CMNB/KiBot/) is used to generate all kind of documentation from a KiCAD6 project.
 
-Whenever a file matching `pcb/*.kicad_*` changes this workflow will trigger.
+Whenever a file matching `*.kicad_*` changes this workflow will trigger.
 
 The following documents are generated on every build:
 
@@ -51,6 +51,6 @@ The following documents are generated on every build:
 - [ ] clone this new repository localy
 - [ ] replace content of README.md
 - [ ] PCB
-   - [ ] change the filenames in `pcb/*.kicad_*` matching your repository name
+   - [ ] change the filenames in `*.kicad_*` matching your repository name
    - [ ] create your PCB
 - [ ] commit and push all those changes regulary to your project
